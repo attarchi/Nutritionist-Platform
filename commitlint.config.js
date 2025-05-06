@@ -33,6 +33,7 @@ module.exports = {
             ],
         ],
         'scope-empty': [2, 'never'],
+        'scope-case': [2, 'always', 'kebab-case'],
         'subject-case': [2, 'always', 'lower-case'],
     },
 }; 
