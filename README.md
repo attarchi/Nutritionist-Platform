@@ -13,6 +13,52 @@ The monorepo includes the following shared packages:
 | `@mansouri/api-client` | API client utilities and hooks | Web, Mobile |
 | `@mansouri/config` | Shared configuration (ESLint, TS, etc.) | Web, Mobile |
 
+## Shared Types Package
+
+The `@mansouri/shared-types` package provides TypeScript type definitions used across the platform. This ensures type consistency between the web and mobile applications.
+
+### Available Types
+
+- **User Types**: `UserRole`, `User`, `UserWithRelations`
+- **Food Types**: `FoodCategory`, `FoodItem`, `ConsumedFood`
+- **Diet Types**: `Diet`, `CategoryBudget`, `DietProgress`
+- **API Types**: `ApiResponse`, `PaginatedResponse`, `ErrorResponse`
+
+### Usage
+
+```typescript
+import { User, FoodItem, Diet } from '@mansouri/shared-types'
+
+// Example usage
+const user: User = {
+  id: '123',
+  role: 'CLIENT',
+  firstname: 'John',
+  lastname: 'Doe',
+  email: 'john@example.com',
+  languagePreference: 'en',
+  signupDate: new Date()
+}
+```
+
+### Development
+
+The package uses:
+- TypeScript for type definitions
+- Jest for type validation tests
+- tsup for building (CommonJS and ESM outputs)
+
+To build the package:
+```bash
+cd packages/shared-types
+yarn build
+```
+
+To run tests:
+```bash
+yarn test
+```
+
 ## Development Setup
 
 This project uses Yarn as the package manager. Make sure you have the correct version installed:
